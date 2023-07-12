@@ -1,0 +1,10 @@
+iptables --policy INPUT ACCEPT
+
+iptables -F - очистка всех правил
+
+iptables -A INPUT -p tcp --dport 22 -m state --state NEW -j ACCEPT - обезопасим себя от отключения
+
+iptables -A INPUT -i lo -j ACCEPT - возможность устанавливать подключения к серверу обновлений
+
+
+
